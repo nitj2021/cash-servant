@@ -1,0 +1,168 @@
+
+ActiveRecord::ConnectionNotEstablished (ActiveRecord::ConnectionNotEstablished):
+  activerecord (3.2.9) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  activerecord (3.2.9) lib/active_record/connection_adapters/abstract/connection_specification.rb:171:in `retrieve_connection'
+  activerecord (3.2.9) lib/active_record/connection_adapters/abstract/connection_specification.rb:145:in `connection'
+  activerecord (3.2.9) lib/active_record/query_cache.rb:67:in `rescue in call'
+  activerecord (3.2.9) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.9) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `_run__11569609__call__921095018__callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.9) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/hp/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/hp/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/hp/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (184.8ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (314.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (18.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20121204163353)
+  [1m[35m (233.0ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (427.2ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (343.4ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (56.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121204163353')[0m
+Migrating to AddNameToUsers (20121204174426)
+  [1m[35m (436.0ms)[0m  ALTER TABLE `users` ADD `name` varchar(255)
+  [1m[36m (64.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121204174426')[0m
+  [1m[35m (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-04 23:18:44 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Compiled bootstrap_and_overrides.css  (2001ms)  (pid 8444)
+Compiled application.css  (2035ms)  (pid 8444)
+Compiled jquery.js  (1ms)  (pid 8444)
+Compiled jquery_ujs.js  (0ms)  (pid 8444)
+Compiled bootstrap-transition.js  (0ms)  (pid 8444)
+Compiled bootstrap-affix.js  (0ms)  (pid 8444)
+Compiled bootstrap-alert.js  (0ms)  (pid 8444)
+Compiled bootstrap-button.js  (0ms)  (pid 8444)
+Compiled bootstrap-carousel.js  (0ms)  (pid 8444)
+Compiled bootstrap-collapse.js  (0ms)  (pid 8444)
+Compiled bootstrap-dropdown.js  (0ms)  (pid 8444)
+Compiled bootstrap-modal.js  (0ms)  (pid 8444)
+Compiled bootstrap-scrollspy.js  (0ms)  (pid 8444)
+Compiled bootstrap-tab.js  (0ms)  (pid 8444)
+Compiled bootstrap-tooltip.js  (0ms)  (pid 8444)
+Compiled bootstrap-popover.js  (0ms)  (pid 8444)
+Compiled bootstrap-typeahead.js  (0ms)  (pid 8444)
+Compiled bootstrap.js  (92ms)  (pid 8444)
+Compiled application.js  (127ms)  (pid 8444)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+Completed 500 Internal Server Error in 2284ms
+
+ActionView::Template::Error (Missing partial layouts/messages with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/hp/cash/app/views"
+  * "/home/hp/.rvm/gems/ruby-1.9.3-p194@cash/gems/devise-2.1.2/app/views"
+):
+    22:         <div class="content">
+    23:            <div class="row">
+    24:             <div class="span12">
+    25:               <%= render 'layouts/messages' %>
+    26:               <%= yield %>
+    27:             </div>
+    28:           </div>
+  app/views/layouts/application.html.erb:25:in `_app_views_layouts_application_html_erb___9172030_78525750'
+
+
+  Rendered /home/hp/.rvm/gems/ruby-1.9.3-p194@cash/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (16.3ms)
+  Rendered /home/hp/.rvm/gems/ruby-1.9.3-p194@cash/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/hp/.rvm/gems/ruby-1.9.3-p194@cash/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-04 23:22:12 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` [0m
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 500 Internal Server Error in 67ms
+
+ActionView::Template::Error (Missing partial layouts/messages with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/hp/cash/app/views"
+  * "/home/hp/.rvm/gems/ruby-1.9.3-p194@cash/gems/devise-2.1.2/app/views"
+):
+    22:         <div class="content">
+    23:            <div class="row">
+    24:             <div class="span12">
+    25:               <%= render 'layouts/messages' %>
+    26:               <%= yield %>
+    27:             </div>
+    28:           </div>
+  app/views/layouts/application.html.erb:25:in `_app_views_layouts_application_html_erb___9172030_78525750'
+
+
+  Rendered /home/hp/.rvm/gems/ruby-1.9.3-p194@cash/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/hp/.rvm/gems/ruby-1.9.3-p194@cash/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/hp/.rvm/gems/ruby-1.9.3-p194@cash/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-04 23:22:54 +0530
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` 
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-12-04 23:23:03 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (160.3ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 186ms (Views: 174.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-12-04 23:23:07 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (37.8ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-12-04 23:24:08 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
