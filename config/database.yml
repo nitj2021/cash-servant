@@ -7,5 +7,5 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: grubguroo_test
+  database: cash
   pool: 5
