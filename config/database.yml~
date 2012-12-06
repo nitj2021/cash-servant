@@ -1,8 +1,11 @@
 development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: cusack
+  adapter: postgresql
+  encoding: unicode
+  database: cash
   pool: 5
-  username: root
-  password: root
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: grubguroo_test
+  pool: 5
