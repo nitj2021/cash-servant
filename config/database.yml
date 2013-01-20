@@ -3,6 +3,8 @@ development:
   encoding: unicode
   database: cash
   pool: 5
+  username: postgres
+  password: root
 
 test:
   adapter: postgresql

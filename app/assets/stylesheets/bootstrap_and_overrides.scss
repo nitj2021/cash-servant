@@ -1,3 +1,26 @@
 @import "bootstrap";
 body { padding-top: 60px; }
+
 @import "bootstrap-responsive";
+.green{
+background:green;
+
+hover { background-color:#006db9; }
+}
+.small{
+width:125px;
+height:9px;
+font-size:10px
+}
+.label-font{
+font-size:10px
+}
+.empty{
+  border-color:red;
+}
+.error-msg{
+    cursor:pointer;
+    display:none;
+margin-left:5px;
+color:red;
+}

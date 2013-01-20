@@ -1,0 +1,16 @@
+
+<%=link_to "Add Property",new_property_path,:remote=>true ,:data=>{:toggle=>"modal" ,:target=>"#new-contact-modal"},:class=>"btn green"%>
+  <div style="border: 3px solid; width:80%"  align=center>
+    <table width=100% id="my_property">
+      <tr><th style="width:50%">Address</th><th style="width:50%">view</th></tr>
+       <%@properties.each do |f|%>
+      <tr>
+         <td style="width:50%" align=center>  <%=f.address%></td><td style="width:50%"></td>
+      </tr>
+          <%end%>
+    </table>
+  </div>
+   <div id="new-contact-modal" title="new" class="modal hide fade" tabindex="-1"
+     role="dialog" aria-labelledby="new-contact-modal-label"
+     aria-hidden="true" >
+    </div>

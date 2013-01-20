@@ -1,8 +1,8 @@
 Cash::Application.routes.draw do
   get "home/index"
-
+      resources :properties
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'properties#index'
   end
   root :to => "home#index"
 

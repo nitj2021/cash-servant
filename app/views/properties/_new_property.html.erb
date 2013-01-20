@@ -1,0 +1,216 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal"
+          aria-hidden="true">×
+  </button>
+  <h3 style="line-height: 15px" id="new-contact-modal-label"> add </h3>
+</div>
+<%= simple_form_for(@property,
+                    :remote => true,
+                    :html => {:class => "form-horizontal",
+                              }) do |f| %>
+    <div id="new-contact-body" class="modal-body">
+      <%#= form_for @property ,:remote=>true,:method=>:post  do |f|%>
+      <%# form_for @garage do |build| %>
+
+      <%#=builder.select :garage_id%>
+      <%#end%>
+      <table style="width:50%;float:left;" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0;">
+        <tr>
+          <td style="width:30%" valign=top class="label-font">Street Address</td>
+          <td style="width:70%"> <%= f.text_field :street_address, :class=>"small required", :style=>"height:9px" %>
+          <span class="error-msg" title="Required">*</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">City</td>
+          <td style="width:70%"> <%= f.text_field :city, :class=>"small required", :style=>"height:9px" %>
+          <span class="error-msg" title="Required">*</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">State</td>
+          <td style="width:70%"> <%#= f.text_field :state,:class=>"small required",:style=>"height:9px" %>
+          <span class="error-msg" title="Required">*</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">Zip Code</td>
+          <td style="width:70%"> <%= f.text_field :zip_code, :class=>"small required", :style=>"height:9px" %>
+          <span class="error-msg" title="Required">*</span></td>
+        </tr>
+
+        <%= f.fields_for :property_property_type do |builder| %>
+
+            <%#= builder.label :childname %>
+            <tr>
+              <td style="width:30%" valign=top class="label-font">Property Type:</td>
+              <td style="width:70%">
+                <%= builder.select(:property_type_id, PropertyType.all.collect { |p| [p.name, p.id] }, {:prompt => "Select"}, {:class=>"small required", :style=>"height:25px;"}) %>
+                <%#= build.select "garage_id",options_from_collection_for_select(Garage.all,"id","capacity"), {:prompt => "Select",:class=>"small required",:style=>"height:25px;"}  %>
+             <span class="error-msg" title="Required">*</span>
+              </td>
+            </tr>
+        <% end %>
+        <%= f.fields_for :property_bedroom do |builder| %>
+
+            <%#= builder.label :childname %>
+            <tr>
+              <td style="width:30%" valign=top class="label-font">Bedrooms:</td>
+              <td style="width:70%">
+                <%= builder.select(:bedroom_id, Bedroom.all.collect { |p| [p.quantity, p.id] }, {:prompt => "Select"}, {:class=>"small required", :style=>"height:25px;"}) %>
+                <%#= build.select "garage_id",options_from_collection_for_select(Garage.all,"id","capacity"), {:prompt => "Select",:class=>"small required",:style=>"height:25px;"}  %>
+             <span class="error-msg" title="Required">*</span> </td>
+            </tr>
+        <% end %>
+
+         <%= f.fields_for :property_bathroom do |builder| %>
+
+            <%#= builder.label :childname %>
+            <tr>
+              <td style="width:30%" valign=top class="label-font">Bathrooms:</td>
+              <td style="width:70%">
+                <%= builder.select(:bathroom_id, Bathroom.all.collect { |p| [p.quantity, p.id] }, {:prompt => "Select"}, {:class=>"small required", :style=>"height:25px;"}) %>
+                <span class="error-msg" title="Required">*</span>
+                <%#= build.select "garage_id",options_from_collection_for_select(Garage.all,"id","capacity"), {:prompt => "Select",:class=>"small required",:style=>"height:25px;"}  %>
+              </td>
+            </tr>
+        <% end %>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">Asking Price:</td>
+          <td style="width:70%"> <%= f.text_field :asking_price, :class=>"small required number", :style=>"height:9px" %>
+          <span class="error-msg" title="Required">*</span></td>
+        </tr>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">Square Feet:</td>
+          <td style="width:70%"> <%= f.text_field :square_feet, :class=>"small required number", :style=>"height:9px" %>
+          <span class="error-msg" title="Required">*</span></td>
+        </tr>
+        <%= f.fields_for :property_seller_type do |builder| %>
+
+            <%#= builder.label :childname %>
+            <tr>
+              <td style="width:30%" valign=top class="label-font">Seller Type:</td>
+              <td style="width:70%">
+                <%= builder.select(:seller_type_id, SellerType.all.collect { |p| [p.category, p.id] }, {:prompt => "Select"}, {:class=>"small required", :style=>"height:25px;"}) %>
+               <span class="error-msg" title="Required">*</span>
+                <%#= build.select "garage_id",options_from_collection_for_select(Garage.all,"id","capacity"), {:prompt => "Select",:class=>"small required",:style=>"height:25px;"}  %>
+              </td>
+            </tr>
+        <% end %>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">Year Built:</td>
+          <td style="width:70%"> <%= f.text_field :year_built, :class=>"small required number", :style=>"height:9px" %>
+          <span class="error-msg" title="Required">*</span></td>
+        </tr>
+        <%= f.fields_for :property_story do |builder| %>
+
+            <%#= builder.label :childname %>
+            <tr>
+              <td style="width:30%" valign=top class="label-font">Stories:</td>
+              <td style="width:70%">
+                <%= builder.select(:story_id, Story.all.collect { |p| [p.quantity, p.id] }, {:prompt => "Select"}, {:class=>"small required", :style=>"height:25px;"}) %>
+                <span class="error-msg" title="Required">*</span>
+                <%#= build.select "garage_id",options_from_collection_for_select(Garage.all,"id","capacity"), {:prompt => "Select",:class=>"small required",:style=>"height:25px;"}  %>
+              </td>
+            </tr>
+        <% end %>
+
+        <tr>
+          <td style="width:30%" valign=top class="label-font">Short Property Description:</td>
+          <td style="width:70%"> <%= f.text_field :short_property_description, :class=>"small", :style=>"height:9px" %>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">video:</td>
+          <td style="width:70%"> <%= f.text_area :video, :autofocus => true,:style=>"resize:none;width:125px",:rows=>"2",:class=>"label-font" %></td>
+        </tr>
+      </table>
+      <table style="width:50%;float:right;">
+        <%= f.fields_for :property_pool do |builder| %>
+
+            <%#= builder.label :childname %>
+            <tr>
+              <td style="width:30%" valign=top class="label-font">Pool:</td>
+              <td style="width:70%">
+                <%= builder.select(:pool_id, Pool.all.collect { |p| [p.category, p.id] }, {:prompt => "Select"}, {:class=>"small required", :style=>"height:25px;"}) %>
+                <%#= build.select "garage_id",options_from_collection_for_select(Garage.all,"id","capacity"), {:prompt => "Select",:class=>"small required",:style=>"height:25px;"}  %>
+              <span class="error-msg" title="Required">*</span>
+              </td>
+            </tr>
+        <% end %>
+        <%= f.fields_for :property_water_front do |builder| %>
+
+            <%#= builder.label :childname %>
+            <tr>
+              <td style="width:30%" valign=top class="label-font">WaterFront:</td>
+              <td style="width:70%">
+                <%= builder.select(:water_front_id, WaterFront.all.collect { |p| [p.category, p.id] }, {:prompt => "Select"}, {:class=>"small required", :style=>"height:25px;"}) %>
+                <span class="error-msg" title="Required">*</span>
+                <%#= build.select "garage_id",options_from_collection_for_select(Garage.all,"id","capacity"), {:prompt => "Select",:class=>"small required",:style=>"height:25px;"}  %>
+              </td>
+            </tr>
+        <% end %>
+
+        <%= f.fields_for :property_garage do |builder| %>
+
+            <%#= builder.label :childname %>
+            <tr>
+              <td style="width:30%" valign=top class="label-font">Garage:</td>
+              <td style="width:70%">
+                <%= builder.select(:garage_id, Garage.all.collect { |p| [p.capacity, p.id] }, {:prompt => "Select"}, {:class=>"small required", :style=>"height:25px;"}) %>
+               <span class="error-msg" title="Required">*</span>
+                <%#= build.select "garage_id",options_from_collection_for_select(Garage.all,"id","capacity"), {:prompt => "Select",:class=>"small required",:style=>"height:25px;"}  %>
+              </td>
+            </tr>
+        <% end %>
+ <%= f.fields_for :property_basement do |builder| %>
+
+            <%#= builder.label :childname %>
+            <tr>
+              <td style="width:30%" valign=top class="label-font">Basement:</td>
+              <td style="width:70%">
+                <%= builder.select(:basement_id, Basement.all.collect { |p| [p.category, p.id] }, {:prompt => "Select"}, {:class=>"small required", :style=>"height:25px;"}) %>
+                <span class="error-msg" title="Required">*</span>
+                <%#= build.select "garage_id",options_from_collection_for_select(Garage.all,"id","capacity"), {:prompt => "Select",:class=>"small required",:style=>"height:25px;"}  %>
+              </td>
+            </tr>
+        <% end %>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">Lot Size:</td>
+          <td style="width:70%">
+           <span class="error-msg" title="Required">*</span>
+           <%#= f.text_field :address,:class=>"small required",:style=>"height:9px" %></td>
+        </tr>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">Full Property Description</td>
+          <td style="width:70%"> <%= f.text_area :full_property_description, :class=>" required label-font",:rows=>"3", :style=>"resize:none;width:112px;height:60px" %>
+          <span class="error-msg" title="Required">*</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">Meta Description</td>
+          <td style="width:70%"> <%= f.text_area :meta_description, :class=>" label-font",:rows=>"3", :style=>"resize:none;width:112px;height:60px" %>
+
+          </td>
+        </tr>
+        <tr>
+          <td style="width:30%" valign=top class="label-font">Meta Keywords</td>
+          <td style="width:70%"> <%= f.text_area :meta_keyword, :class=>"label-font",:rows=>"3", :style=>"resize:none;width:112px;height:60px" %></td>
+        </tr>
+      </table>
+
+
+
+
+
+      <%#= render 'contacts/contact_fields', :f => contact_form %>
+    </div>
+    <div class="modal-footer">
+      <%= submit_tag "Save", :class => "btn btn-primary" ,:id=>"create_property"%>
+<% end %>
+<%#= t('simple_form.buttons.or') %>
+<a data-dismiss="modal" aria-hidden="true" class = "btn btn-primary">
+  <%#= t('simple_form.buttons.cancel') %>
+  cancel </a>
+</div>
+<%# end %>
