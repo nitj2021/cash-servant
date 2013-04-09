@@ -3,3 +3,504 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (26.7ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20121204163353)
+  [1m[35m (36.9ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Mysql2::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Connecting to database specified by database.yml
+  [1m[36m (97.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20121204163353)
+  [1m[35m (0.6ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Mysql2::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (341.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (202.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20121204163353)
+  [1m[35m (36.6ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (45.8ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (39.4ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (45.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121204163353')[0m
+Migrating to AddNameToUsers (20121204174426)
+  [1m[35m (89.3ms)[0m  ALTER TABLE `users` ADD `name` varchar(255)
+  [1m[36m (2.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121204174426')[0m
+Migrating to CreatePropertyTypes (20130119072513)
+  [1m[35m (98.7ms)[0m  CREATE TABLE `property_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (2.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130119072513')[0m
+Migrating to CreateBedrooms (20130119074508)
+  [1m[35m (20.1ms)[0m  CREATE TABLE `bedrooms` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `quantity` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130119074508')[0m
+Migrating to CreateBathrooms (20130119075222)
+  [1m[35m (45.0ms)[0m  CREATE TABLE `bathrooms` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `quantity` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (2.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130119075222')[0m
+Migrating to CreateSellerTypes (20130119075550)
+  [1m[35m (8.8ms)[0m  CREATE TABLE `seller_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (3.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130119075550')[0m
+Migrating to CreateStories (20130119080153)
+  [1m[35m (7.0ms)[0m  CREATE TABLE `stories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `quantity` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (3.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130119080153')[0m
+Migrating to CreatePools (20130119082112)
+  [1m[35m (6.7ms)[0m  CREATE TABLE `pools` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255)) ENGINE=InnoDB
+  [1m[36m (5.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130119082112')[0m
+Migrating to CreateWaterFronts (20130119082854)
+  [1m[35m (11.6ms)[0m  CREATE TABLE `water_fronts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255)) ENGINE=InnoDB
+  [1m[36m (5.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130119082854')[0m
+Migrating to CreateGarages (20130119084226)
+  [1m[35m (10.1ms)[0m  CREATE TABLE `garages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `capacity` varchar(255)) ENGINE=InnoDB
+  [1m[36m (3.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130119084226')[0m
+Migrating to CreateBasements (20130119085631)
+  [1m[35m (10.8ms)[0m  CREATE TABLE `basements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (2.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130119085631')[0m
+Migrating to CreateProperties (20130119090644)
+  [1m[35m (7.6ms)[0m  CREATE TABLE `properties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `street_address` varchar(255) NOT NULL, `video` varchar(255), `city` varchar(255) NOT NULL, `zip_code` varchar(255) NOT NULL, `short_property_description` varchar(255), `full_property_description` text NOT NULL, `meta_description` text, `meta_keyword` text, `asking_price` int(11) NOT NULL, `square_feet` int(11) NOT NULL, `year_built` int(11) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (2.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130119090644')[0m
+Migrating to CreatePropertyGarages (20130120062934)
+  [1m[35m (7.5ms)[0m  CREATE TABLE `property_garages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `property_id` int(11), `garage_id` int(11)) ENGINE=InnoDB
+  [1m[36m (3.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130120062934')[0m
+Migrating to CreatePropertyPropertyTypes (20130120095217)
+  [1m[35m (17.5ms)[0m  CREATE TABLE `property_property_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `property_id` int(11), `property_type_id` int(11)) ENGINE=InnoDB
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130120095217')[0m
+Migrating to CreatePropertyBedrooms (20130120110008)
+  [1m[35m (9.2ms)[0m  CREATE TABLE `property_bedrooms` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `property_id` int(11), `bedroom_id` int(11)) ENGINE=InnoDB
+  [1m[36m (3.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130120110008')[0m
+Migrating to CreatePropertyBathrooms (20130120112752)
+  [1m[35m (7.8ms)[0m  CREATE TABLE `property_bathrooms` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `property_id` int(11), `bathroom_id` int(11)) ENGINE=InnoDB
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130120112752')[0m
+Migrating to CreatePropertySellerTypes (20130120114025)
+  [1m[35m (11.0ms)[0m  CREATE TABLE `property_seller_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `property_id` int(11), `seller_type_id` int(11)) ENGINE=InnoDB
+  [1m[36m (3.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130120114025')[0m
+Migrating to CreatePropertyStories (20130120114630)
+  [1m[35m (9.7ms)[0m  CREATE TABLE `property_stories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `property_id` int(11), `story_id` int(11)) ENGINE=InnoDB
+  [1m[36m (4.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130120114630')[0m
+Migrating to CreatePropertyPools (20130120115806)
+  [1m[35m (61.8ms)[0m  CREATE TABLE `property_pools` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `property_id` int(11), `pool_id` int(11)) ENGINE=InnoDB
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130120115806')[0m
+Migrating to CreatePropertyWaterFronts (20130120120702)
+  [1m[35m (6.9ms)[0m  CREATE TABLE `property_water_fronts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `property_id` int(11), `water_front_id` int(11)) ENGINE=InnoDB
+  [1m[36m (2.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130120120702')[0m
+Migrating to CreatePropertyBasements (20130120124853)
+  [1m[35m (41.4ms)[0m  CREATE TABLE `property_basements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `property_id` int(11), `basement_id` int(11)) ENGINE=InnoDB
+  [1m[36m (14.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130120124853')[0m
+  [1m[35m (0.8ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (11.3ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Single Family' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Single Family', '2013-04-09 15:16:45')
+  [1m[36m (10.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (1.7ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Condo' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Condo', '2013-04-09 15:16:45')
+  [1m[36m (4.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Town Home' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Town Home', '2013-04-09 15:16:45')
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Duplex' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Duplex', '2013-04-09 15:16:45')
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Triplex' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Triplex', '2013-04-09 15:16:45')
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Quad' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Quad', '2013-04-09 15:16:45')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY '5+ Apartment' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', '5+ Apartment', '2013-04-09 15:16:45')
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Mobile In Park' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Mobile In Park', '2013-04-09 15:16:45')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Mobile W/ Land' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Mobile W/ Land', '2013-04-09 15:16:45')
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Modular' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Modular', '2013-04-09 15:16:45')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Commercial' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Commercial', '2013-04-09 15:16:45')
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Land' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Land', '2013-04-09 15:16:45')
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPropertyType Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `property_types` WHERE `property_types`.`name` = BINARY 'Other' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `property_types` (`created_at`, `name`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'Other', '2013-04-09 15:16:45')
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY '1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '1', '2013-04-09 15:16:45')
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY '2' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '2', '2013-04-09 15:16:45')
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY '3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '3', '2013-04-09 15:16:45')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY '4' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '4', '2013-04-09 15:16:45')
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY '5' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '5', '2013-04-09 15:16:45')
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY '6' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '6', '2013-04-09 15:16:45')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY '7' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '7', '2013-04-09 15:16:45')
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY '8' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '8', '2013-04-09 15:16:45')
+  [1m[36m (3.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY '9' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '9', '2013-04-09 15:16:45')
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY '10+' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '10+', '2013-04-09 15:16:45')
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBedroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bedrooms` WHERE `bedrooms`.`quantity` = BINARY 'None' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bedrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'None', '2013-04-09 15:16:45')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBathroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bathrooms` WHERE `bathrooms`.`quantity` = BINARY '1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bathrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '1', '2013-04-09 15:16:45')
+  [1m[36m (4.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBathroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bathrooms` WHERE `bathrooms`.`quantity` = BINARY '1.5' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bathrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '1.5', '2013-04-09 15:16:45')
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBathroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bathrooms` WHERE `bathrooms`.`quantity` = BINARY '2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bathrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '2', '2013-04-09 15:16:45')
+  [1m[36m (24.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBathroom Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `bathrooms` WHERE `bathrooms`.`quantity` = BINARY '2.5' LIMIT 1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO `bathrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '2.5', '2013-04-09 15:16:45')
+  [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBathroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bathrooms` WHERE `bathrooms`.`quantity` = BINARY '3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bathrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '3', '2013-04-09 15:16:45')
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBathroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bathrooms` WHERE `bathrooms`.`quantity` = BINARY '3.5' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bathrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '3.5', '2013-04-09 15:16:45')
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBathroom Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `bathrooms` WHERE `bathrooms`.`quantity` = BINARY '4' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bathrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '4', '2013-04-09 15:16:45')
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBathroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bathrooms` WHERE `bathrooms`.`quantity` = BINARY '4.5' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bathrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '4.5', '2013-04-09 15:16:45')
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBathroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bathrooms` WHERE `bathrooms`.`quantity` = BINARY '5+' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bathrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '5+', '2013-04-09 15:16:45')
+  [1m[36m (4.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBathroom Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `bathrooms` WHERE `bathrooms`.`quantity` = BINARY 'None' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `bathrooms` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'None', '2013-04-09 15:16:45')
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSellerType Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `seller_types` WHERE `seller_types`.`category` = BINARY 'Agent' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `seller_types` (`category`, `created_at`, `updated_at`) VALUES ('Agent', '2013-04-09 15:16:45', '2013-04-09 15:16:45')
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSellerType Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `seller_types` WHERE `seller_types`.`category` = BINARY 'FSBO' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `seller_types` (`category`, `created_at`, `updated_at`) VALUES ('FSBO', '2013-04-09 15:16:45', '2013-04-09 15:16:45')
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSellerType Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `seller_types` WHERE `seller_types`.`category` = BINARY 'Other' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `seller_types` (`category`, `created_at`, `updated_at`) VALUES ('Other', '2013-04-09 15:16:45', '2013-04-09 15:16:45')
+  [1m[36m (4.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSellerType Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `seller_types` WHERE `seller_types`.`category` = BINARY 'Unknown' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `seller_types` (`category`, `created_at`, `updated_at`) VALUES ('Unknown', '2013-04-09 15:16:45', '2013-04-09 15:16:45')
+  [1m[36m (3.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (2.3ms)[0m  BEGIN
+  [1m[36mStory Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '1' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '1', '2013-04-09 15:16:45')
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStory Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '1.5' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '1.5', '2013-04-09 15:16:45')
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStory Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '2', '2013-04-09 15:16:45')
+  [1m[36m (5.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mStory Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '3', '2013-04-09 15:16:45')
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStory Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '4' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '4', '2013-04-09 15:16:45')
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStory Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '5' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '5', '2013-04-09 15:16:45')
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStory Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '6' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '6', '2013-04-09 15:16:45')
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStory Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '7' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '7', '2013-04-09 15:16:45')
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStory Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '8' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '8', '2013-04-09 15:16:45')
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStory Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '9' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '9', '2013-04-09 15:16:45')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStory Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY '10+' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', '10+', '2013-04-09 15:16:45')
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStory Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `stories` WHERE `stories`.`quantity` = BINARY 'None' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `stories` (`created_at`, `quantity`, `updated_at`) VALUES ('2013-04-09 15:16:45', 'None', '2013-04-09 15:16:45')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mPool Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `pools` WHERE `pools`.`category` = BINARY 'None' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `pools` (`category`) VALUES ('None')
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPool Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `pools` WHERE `pools`.`category` = BINARY 'Above Ground' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `pools` (`category`) VALUES ('Above Ground')
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPool Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `pools` WHERE `pools`.`category` = BINARY 'In Ground' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `pools` (`category`) VALUES ('In Ground')
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPool Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `pools` WHERE `pools`.`category` = BINARY 'Pool W/ Jacuzzi' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `pools` (`category`) VALUES ('Pool W/ Jacuzzi')
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPool Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `pools` WHERE `pools`.`category` = BINARY 'Jacuzzi' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `pools` (`category`) VALUES ('Jacuzzi')
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mWaterFront Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `water_fronts` WHERE `water_fronts`.`category` = BINARY 'None' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `water_fronts` (`category`) VALUES ('None')
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mWaterFront Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `water_fronts` WHERE `water_fronts`.`category` = BINARY 'Pond' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `water_fronts` (`category`) VALUES ('Pond')
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mWaterFront Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `water_fronts` WHERE `water_fronts`.`category` = BINARY 'Lakeview' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `water_fronts` (`category`) VALUES ('Lakeview')
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mWaterFront Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `water_fronts` WHERE `water_fronts`.`category` = BINARY 'Lakefront' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `water_fronts` (`category`) VALUES ('Lakefront')
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mWaterFront Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `water_fronts` WHERE `water_fronts`.`category` = BINARY 'Lake & Dock' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `water_fronts` (`category`) VALUES ('Lake & Dock')
+  [1m[36m (8.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mWaterFront Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `water_fronts` WHERE `water_fronts`.`category` = BINARY 'Canal' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `water_fronts` (`category`) VALUES ('Canal')
+  [1m[36m (4.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mWaterFront Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `water_fronts` WHERE `water_fronts`.`category` = BINARY 'Canal & Dock' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `water_fronts` (`category`) VALUES ('Canal & Dock')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mWaterFront Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `water_fronts` WHERE `water_fronts`.`category` = BINARY 'Oceanview' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `water_fronts` (`category`) VALUES ('Oceanview')
+  [1m[36m (45.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mWaterFront Exists (0.9ms)[0m  [1mSELECT 1 AS one FROM `water_fronts` WHERE `water_fronts`.`category` = BINARY 'Oceanfront' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `water_fronts` (`category`) VALUES ('Oceanfront')
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mWaterFront Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `water_fronts` WHERE `water_fronts`.`category` = BINARY 'Ocean & Dock' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `water_fronts` (`category`) VALUES ('Ocean & Dock')
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mGarage Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `garages` WHERE `garages`.`capacity` = BINARY 'None' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `garages` (`capacity`) VALUES ('None')
+  [1m[36m (5.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mGarage Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `garages` WHERE `garages`.`capacity` = BINARY 'Driveway' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `garages` (`capacity`) VALUES ('Driveway')
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mGarage Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `garages` WHERE `garages`.`capacity` = BINARY 'Carport' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `garages` (`capacity`) VALUES ('Carport')
+  [1m[36m (3.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mGarage Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `garages` WHERE `garages`.`capacity` = BINARY '1 car' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `garages` (`capacity`) VALUES ('1 car')
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mGarage Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `garages` WHERE `garages`.`capacity` = BINARY '2 car' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `garages` (`capacity`) VALUES ('2 car')
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mGarage Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `garages` WHERE `garages`.`capacity` = BINARY '3 car' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `garages` (`capacity`) VALUES ('3 car')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mGarage Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `garages` WHERE `garages`.`capacity` = BINARY '4 car' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `garages` (`capacity`) VALUES ('4 car')
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mGarage Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `garages` WHERE `garages`.`capacity` = BINARY '5+ car' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `garages` (`capacity`) VALUES ('5+ car')
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBasement Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `basements` WHERE `basements`.`category` = BINARY 'Yes' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `basements` (`category`) VALUES ('Yes')
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBasement Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `basements` WHERE `basements`.`category` = BINARY 'No' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `basements` (`category`) VALUES ('No')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mBasement Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `basements` WHERE `basements`.`category` = BINARY 'Finished' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `basements` (`category`) VALUES ('Finished')
+  [1m[36m (8.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  BEGIN
+  [1m[36mBasement Exists (3.6ms)[0m  [1mSELECT 1 AS one FROM `basements` WHERE `basements`.`category` = BINARY 'Unfinished' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `basements` (`category`) VALUES ('Unfinished')
+  [1m[36m (3.2ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-09 08:17:52 -0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` [0m
+  Rendered home/index.html.erb within layouts/application (3.9ms)
+Compiled bootstrap_and_overrides.css  (4364ms)  (pid 13320)
+Compiled properties.css  (1ms)  (pid 13320)
+Compiled application.css  (4573ms)  (pid 13320)
+Compiled jquery.js  (3ms)  (pid 13320)
+Compiled jquery_ujs.js  (7ms)  (pid 13320)
+Compiled bootstrap-transition.js  (0ms)  (pid 13320)
+Compiled bootstrap-affix.js  (0ms)  (pid 13320)
+Compiled bootstrap-alert.js  (0ms)  (pid 13320)
+Compiled bootstrap-button.js  (0ms)  (pid 13320)
+Compiled bootstrap-carousel.js  (0ms)  (pid 13320)
+Compiled bootstrap-collapse.js  (0ms)  (pid 13320)
+Compiled bootstrap-dropdown.js  (0ms)  (pid 13320)
+Compiled bootstrap-modal.js  (0ms)  (pid 13320)
+Compiled bootstrap-scrollspy.js  (0ms)  (pid 13320)
+Compiled bootstrap-tab.js  (0ms)  (pid 13320)
+Compiled bootstrap-tooltip.js  (0ms)  (pid 13320)
+Compiled bootstrap-popover.js  (0ms)  (pid 13320)
+Compiled bootstrap-typeahead.js  (0ms)  (pid 13320)
+Compiled bootstrap.js  (230ms)  (pid 13320)
+Compiled properties.js  (0ms)  (pid 13320)
+Compiled application.js  (315ms)  (pid 13320)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 5550ms (Views: 5427.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-04-09 08:18:19 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (386.1ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 486ms (Views: 470.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-04-09 08:18:22 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (36.1ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 109ms (Views: 108.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-04-09 08:18:54 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O4kofq1Y6ltm5x7KQtp0ynzgVfRZwFjAFHR9wHz3+gE=", "user"=>{"name"=>"op@op.com", "email"=>"op@op.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (187.8ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'op@op.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`name` = 'op@op.com' LIMIT 1
+  [1m[36mUser Exists (13.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'op@op.com' LIMIT 1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-04-09 15:18:55', NULL, NULL, 'op@op.com', '$2a$10$.0jnQHT3FR780GcjKyC.suzwbdGBof/bNW/UtTJgo8l0AfsD38Ofu', NULL, NULL, 'op@op.com', NULL, NULL, NULL, 0, '2013-04-09 15:18:55')
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (19.8ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2013-04-09 15:18:55', `current_sign_in_at` = '2013-04-09 15:18:55', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2013-04-09 15:18:55' WHERE `users`.`id` = 1[0m
+  [1m[35m (3.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 688ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-09 08:18:55 -0700
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Processing by PropertiesController#index as HTML
+  [1m[35mProperty Load (0.2ms)[0m  SELECT `properties`.* FROM `properties` WHERE `properties`.`user_id` = 1
+  Rendered properties/index.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_navigation.html.erb (6.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 113ms (Views: 54.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/properties/new" for 127.0.0.1 at 2013-04-09 08:19:05 -0700
+Processing by PropertiesController#new as JS
+  [1m[36m (5.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (3.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (4.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (8.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (12.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (8.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mPropertyType Load (0.3ms)[0m  [1mSELECT `property_types`.* FROM `property_types` [0m
+  [1m[35mBedroom Load (0.3ms)[0m  SELECT `bedrooms`.* FROM `bedrooms` 
+  [1m[36mBathroom Load (0.2ms)[0m  [1mSELECT `bathrooms`.* FROM `bathrooms` [0m
+  [1m[35mSellerType Load (0.2ms)[0m  SELECT `seller_types`.* FROM `seller_types` 
+  [1m[36mStory Load (0.3ms)[0m  [1mSELECT `stories`.* FROM `stories` [0m
+  [1m[35mPool Load (0.2ms)[0m  SELECT `pools`.* FROM `pools` 
+  [1m[36mWaterFront Load (0.3ms)[0m  [1mSELECT `water_fronts`.* FROM `water_fronts` [0m
+  [1m[35mGarage Load (0.2ms)[0m  SELECT `garages`.* FROM `garages` 
+  [1m[36mBasement Load (0.2ms)[0m  [1mSELECT `basements`.* FROM `basements` [0m
+  Rendered properties/_new_property.html.erb (246.2ms)
+  Rendered properties/new.js.erb (258.3ms)
+Completed 200 OK in 625ms (Views: 225.6ms | ActiveRecord: 122.4ms)

@@ -102,11 +102,10 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.4.0)
+    mysql2 (0.3.11)
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
     orm_adapter (0.4.0)
-    pg (0.14.0)
-    pg (0.14.0-x86-mingw32)
     polyglot (0.3.3)
     quiet_assets (1.0.1)
       railties (~> 3.1)
@@ -196,7 +195,7 @@ DEPENDENCIES
   factory_girl_rails (>= 4.1.0)
   jquery-rails
   launchy (>= 2.1.2)
-  pg
+  mysql2
   quiet_assets (>= 1.0.1)
   rails (= 3.2.9)
   rolify (>= 3.2.0)
