@@ -3,9 +3,11 @@ development:
   encoding: unicode
   database: cash
   pool: 5
+  username: root
+  password: root
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: grubguroo_test
+  database: cash
   pool: 5
