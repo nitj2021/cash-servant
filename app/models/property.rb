@@ -13,7 +13,8 @@ class Property < ActiveRecord::Base
      has_one :property_story
      has_one :property_pool
    has_one :property_water_front
- has_one :property_basement
+	after_new :create_resource
+   has_one :property_basement
 
     accepts_nested_attributes_for :property_garage, :reject_if => proc { |attributes| attributes['garage_id'].blank? }
     accepts_nested_attributes_for :property_property_type, :reject_if => proc { |attributes| attributes['property_type_id'].blank? }
@@ -34,5 +35,16 @@ class Property < ActiveRecord::Base
 def address
   street_address+","+city+","+zip_code
 end
+def create_resource
+build_property_garage
+   build_property_property_type
+   build_property_bedroom
+  build_property_bathroom
+   build_property_seller_type
+    build_property_story
+build_property_pool
+build_property_basement
+ build_property_water_front
+  end
 
 end

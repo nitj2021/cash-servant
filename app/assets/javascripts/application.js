@@ -17,18 +17,25 @@
 $(document).ready(function(e){
     var intRegex = /^\d+$/;
 
-    $(".required").live("focusin",function(e){
+    $(".required").on("focusin",function(e){
 
         $(this).next().hide()
     })
-    $(".required").live("focusout",function(e){
+    $(".required").on("focusout",function(e){
          if($.trim($(this).val())==""){
                        $(this).next().show()
          }
-
-
+        var str=$("#property_street_address").val()+", "+  $("#property_city").val()+", property for sale"
+         $("#property_meta_description").val(str)
+//        alert($("#property_property_bedroom_attributes_bedroom_id option:selected").text())
+        str="Real State for sale in "+ $("#property_city").val() +", "+$("#property_property_bedroom_attributes_bedroom_id option:selected").text()+" Bedrooms/"
+        str+=$("#property_property_bathroom_attributes_bathroom_id option:selected").text()+" baths for sale in" +$("#property_city").val()
+        $("#property_meta_keyword").val(str)
+//              Real estate for sale in edmond Oklahoma, 2 bedrooms/1.5 baths for sale in edmond Oklahoma, Property for sale4
+//            in edmond Oklahoma, 4445 sq. ft./2 bedroom/1.5 bath house for sale in edmond Oklahoma for 22333
     })
-    $("#create_property").live("click",function(e){
+
+    $("#create_property").on("click",function(e){
 
         check_empty(e)
         check_integer(e)
