@@ -17,11 +17,11 @@
 $(document).ready(function(e){
     var intRegex = /^\d+$/;
 
-    $(".required").live("focusin",function(e){
+    $('body').on("focusin",".required",function(e){
 
         $(this).next().hide()
     })
-    $(".required").live("focusout",function(e){
+    $("body").on("focusout",".required",function(e){
          if($.trim($(this).val())==""){
                        $(this).next().show()
          }
@@ -35,7 +35,7 @@ $(document).ready(function(e){
 //            in edmond Oklahoma, 4445 sq. ft./2 bedroom/1.5 bath house for sale in edmond Oklahoma for 22333
     })
 
-    $("#create_property").on("click",function(e){
+    $("body").on("click","#create_property",function(e){
 
         check_empty(e)
         check_integer(e)
