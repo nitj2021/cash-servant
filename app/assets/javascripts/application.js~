@@ -17,11 +17,11 @@
 $(document).ready(function(e){
     var intRegex = /^\d+$/;
 
-    $(".required").on("focusin",function(e){
+    $(".required").live("focusin",function(e){
 
         $(this).next().hide()
     })
-    $(".required").on("focusout",function(e){
+    $(".required").live("focusout",function(e){
          if($.trim($(this).val())==""){
                        $(this).next().show()
          }
